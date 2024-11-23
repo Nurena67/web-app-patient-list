@@ -8,7 +8,8 @@ const {
   findPatient,
   writePatients, 
   generateNewId,
-  savePatient } = require('./utils/patients')
+  savePatient } = require('./utils/patients');
+const fs = require('fs');
 
 
 // Middleware
@@ -125,6 +126,21 @@ app.post('/patients/:id/edit', (req, res) => {
 
   // Redirect ke halaman detail pasien setelah data diperbarui
   res.redirect(`/patients/${id}`);
+});
+
+app.post('/patients/:id/delete', (req, res) => {
+  const id = req.params.id;
+
+  let patients = readPatients();
+  const updatedPatients = patients.filter(patient => patient.id !== id); // Hapus pasien berdasarkan ID
+
+  if (patients.length === updatedPatients.length) {
+    return res.status(404).send('Pasien tidak ditemukan');
+  }
+
+  fs.writeFileSync('./data/patients.json', JSON.stringify(updatedPatients, null, 2)); // Simpan perubahan ke file JSON
+
+  res.redirect('/patients'); // Redirect ke halaman daftar pasien setelah penghapusan
 });
 
 
