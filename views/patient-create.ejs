@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tambah Data Pasien</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .form-container {
+      max-width: 98%;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container mt-5">
+    <div class="card shadow-lg">
+      <div class="card-header bg-primary text-white text-center">
+        <h4>Form Tambah Data Pasien</h4>
+      </div>
+      <div class="card-body">
+        <form action="/patient-create" method="POST">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="nama" class="form-label">Nama Lengkap</label>
+              <input type="text" id="nama" name="nama" class="form-control" placeholder="Masukkan nama lengkap" required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="umur" class="form-label">Umur</label>
+              <input type="number" id="umur" name="umur" class="form-control" placeholder="Masukkan umur" required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="blood" class="form-label">Golongan Darah</label>
+              <select id="blood" name="blood" class="form-select" required>
+                <option value="" selected disabled>Pilih golongan darah</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="AB">AB</option>
+                <option value="O">O</option>
+              </select>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="checkup" class="form-label">Riwayat Penyakit</label>
+              <textarea id="checkup" name="checkup" class="form-control" rows="3" placeholder="Masukkan riwayat penyakit (jika ada)"></textarea>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="family" class="form-label">Nama Keluarga</label>
+              <input type="text" id="family" name="family" class="form-control" placeholder="Masukkan nama keluarga" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 mb-3">
+              <label for="keluhan" class="form-label">Keluhan</label>
+              <textarea id="keluhan" name="keluhan" class="form-control" rows="4" placeholder="Masukkan keluhan pasien" required></textarea>
+            </div>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-success w-25">Simpan</button>
+            <a href="/patients" class="btn btn-secondary w-25">Batal</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
