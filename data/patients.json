@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": "1006",
+    "nama": "Rizky Nurena Al Irsyad",
+    "umur": 24,
+    "blood": "O",
+    "checkup": "tidak ada",
+    "family": "Wiwik Ernawati",
+    "keluhan": "Stress Ringan wkwk"
+  },
+  {
+    "id": "1007",
+    "nama": "Faviola Ratna",
+    "umur": 21,
+    "blood": "A",
+    "checkup": "tidak ada",
+    "family": "Harianto",
+    "keluhan": "Perut Sakit"
+  }
+]
