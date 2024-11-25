@@ -9,8 +9,8 @@ const {
   writePatients, 
   generateNewId,
   savePatient } = require('./utils/patients');
-const fs = require('fs');
-
+  const fs = require('fs');
+  
 
 // Middleware
 app.use(expressLayout);
