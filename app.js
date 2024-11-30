@@ -69,6 +69,11 @@ app.post('/patient-create', (req, res) => {
   res.redirect('/patients');
 });
 
+app.post('/add-data', (req, res) => {
+  // Mengakses data yang dikirim dari form atau JSON
+  console.log(req.body);  // Lihat data yang dikirim
+  res.send('Data received!');
+});
 
 app.get('/patients/:id', (req, res) => {
   const id = req.params.id; // Ambil ID
